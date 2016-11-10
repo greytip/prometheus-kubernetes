@@ -104,8 +104,8 @@ do
     aws_access_password+="$char"
 done
 echo
-sed -i -e 's/aws_access_password/'"$aws_access_password"'/g' k8s/prometheus/01-prometheus.configmap.yaml
-echo -e "${ORANGE}AWS Access Password set."
+sed -i -e 's/aws_secret_key/'"$aws_access_password"'/g' k8s/prometheus/01-prometheus.configmap.yaml
+echo -e "${ORANGE}AWS Secret Key set."
 tput sgr0
 
 echo
